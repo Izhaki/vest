@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@vest/core": ["packages/core/src/"],
+      "@vest/core/*": ["packages/core/src/*"]
+    }
+  }
+}
