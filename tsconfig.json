@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "@vest/core": ["packages/core/src/"],
       "@vest/core/*": ["packages/core/src/*"],
       "@vest/webpack": ["packages/webpack/src/"],
       "@vest/cucumber": ["packages/cucumber/src/"],
-      "@vest/cucumber/*": ["packages/cucumber/src/*"]
+      "@vest/cucumber/*": ["packages/cucumber/src/*"],
+      "@vest/ui": ["packages/ui/src/"],
+      "test": ["test/"]
     }
   }
 }

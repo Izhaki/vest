@@ -41,8 +41,10 @@ module.exports = {
     'no-param-reassign': 'off',
     // airbnb errors on for..of and for...in but we want these.
     'no-restricted-syntax': ['warn', 'WithStatement', 'LabeledStatement'],
-    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.ts'] }],
+
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'] }],
     'react/jsx-props-no-spreading': 'off',
+    'react/prop-types': 'off',
 
     // So props are not seen as unused vars (rule from https://github.com/vercel/next.js/blob/canary/.eslintrc.json)
     'no-unused-vars': 'off',
