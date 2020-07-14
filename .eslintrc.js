@@ -1,10 +1,3 @@
-const defaultExtends = [
-  'plugin:import/recommended',
-  'airbnb',
-  'prettier',
-  'prettier/react',
-];
-
 // These are allowed to require packages from devDependecies
 const devScripts = ['**/next.config.js'];
 
@@ -16,7 +9,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -24,38 +17,46 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react-hooks'],
-  extends: defaultExtends,
+  plugins: ['react-hooks', '@typescript-eslint'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'prettier/react',
+    'prettier/@typescript-eslint',
+    'plugin:import/recommended',
+    'plugin:import/typescript', // Allow js file import ts files.
+  ],
   settings: {
     react: {
       version: 'detect',
     },
+    // https://www.npmjs.com/package/eslint-import-resolver-typescript
     'import/resolver': {
       // use <root>/tsconfig.json
       typescript: {},
     },
   },
   rules: {
+    // urm... the whole immer is based on param-reassign.
+    'no-param-reassign': 'off',
+    // airbnb errors on for..of and for...in but we want these.
+    'no-restricted-syntax': ['warn', 'WithStatement', 'LabeledStatement'],
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.ts'] }],
+    // Allow dev scripts (like next.config.js) to import from dev dependencies.
     'import/no-extraneous-dependencies': [
       'error',
       { devDependencies: devScripts },
     ],
-  },
-  overrides: [
-    {
-      // Typescript
-      files: ['**/*.ts', '**/*.tsx'],
-      parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint'],
-      extends: [...defaultExtends, 'prettier/@typescript-eslint'],
-      rules: {
-        'react/jsx-filename-extension': [
-          'error',
-          {
-            extensions: ['.jsx', '.tsx'],
-          },
-        ],
+    // https://github.com/benmosher/eslint-plugin-import/issues/1615#issuecomment-577500405
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
-    },
-  ],
+    ],
+  },
 };
