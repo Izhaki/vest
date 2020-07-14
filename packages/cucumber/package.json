@@ -1,0 +1,15 @@
+{
+  "name": "@vest/cucumber",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Izhaki",
+  "license": "MIT",
+  "dependencies": {
+    "@cucumber/cucumber-expressions": "^10.1.0",
+    "@cucumber/gherkin": "^13.0.0",
+    "@cucumber/messages": "^12.0.0"
+  },
+  "peerDependencies": {
+    "immer": "^7.0.5"
+  }
+}
