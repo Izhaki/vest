@@ -1,5 +1,5 @@
 // These are allowed to require packages from devDependecies
-const devScripts = ['**/next.config.js'];
+const devScripts = ['**/next.config.js', '**/stepDefinitions.*'];
 
 module.exports = {
   root: true,
@@ -17,7 +17,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react-hooks', '@typescript-eslint'],
+  plugins: ['react-hooks', '@typescript-eslint', 'chai-friendly'],
   extends: [
     'airbnb',
     'prettier',
@@ -45,6 +45,10 @@ module.exports = {
     // Allow dev scripts (like next.config.js) to import from dev dependencies.
     'import/no-extraneous-dependencies': [
       'error',
+      // scripts that are allowed to import from devDependencies
+      // Because all devDependencies are in root, we need an .eslintrc per package
+      // that points the packageDir for this rule to the root.
+      // See .eslintrc on each package
       { devDependencies: devScripts },
     ],
     // https://github.com/benmosher/eslint-plugin-import/issues/1615#issuecomment-577500405
@@ -59,4 +63,16 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    // Tests
+    {
+      files: ['**/stepDefinitions.*'],
+      rules: {
+        'func-names': 'off',
+        'prefer-arrow-callback': 'off',
+        'no-unused-expressions': 'off', // So it doesn't complain with "expect(loginFn).to.be.called"
+        'chai-friendly/no-unused-expressions': 'error', // So it doesn't complain with "expect(loginFn).to.be.called"
+      },
+    },
+  ],
 };
