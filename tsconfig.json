@@ -8,6 +8,8 @@
       "@vest/webpack": ["packages/webpack/src/"],
       "@vest/cucumber": ["packages/cucumber/src/"],
       "@vest/cucumber/*": ["packages/cucumber/src/*"],
+      "@vest/mocha": ["packages/mocha/src/"],
+      "@vest/mocha/*": ["packages/mocha/src/*"],
       "@vest/ui": ["packages/ui/src/"],
       "test": ["test/"]
     }

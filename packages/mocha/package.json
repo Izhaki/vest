@@ -1,0 +1,7 @@
+{
+  "name": "@vest/mocha",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Izhaki",
+  "license": "MIT"
+}
