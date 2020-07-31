@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 6501",
-    "build": "next build",
+    "build": "rimraf .next && cross-env NODE_ENV=production next build",
+    "export": "yarn run build && next export",
     "start": "next start"
   },
   "dependencies": {
@@ -15,7 +16,9 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "next-transpile-modules": "^3.3.0",
-    "resolve-ts-aliases": "^1.0.1"
+    "resolve-ts-aliases": "^1.0.1",
+    "rimraf": "^3.0.2"
   }
 }
