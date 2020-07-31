@@ -11,7 +11,9 @@
       "@vest/mocha": ["packages/mocha/src/"],
       "@vest/mocha/*": ["packages/mocha/src/*"],
       "@vest/ui": ["packages/ui/src/"],
-      "test": ["test/"]
+      "test": ["test/"],
+      "@vest/site": ["site/src/"],
+      "@vest/site/*": ["site/src/*"]
     }
   }
 }
