@@ -5,6 +5,6 @@
 </p>
 
 <p align="center">
-  <a aria-label="Build" href="https://vest.js.org">[ Site ]
+  <a aria-label="Build" href="https://vest.js.org" target="_blank">[ Site ]
   </a>
 </p>
