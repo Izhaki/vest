@@ -154,7 +154,7 @@ export default function Home() {
         <Section
           title="Test Everywhere"
           body="Bundle tests with your app and load them dynamically on demand. Then run them everywhere."
-          sub="You can even bunlde your tests with production builds."
+          sub="Even your mom's iPhone."
           img="images/test-everywhere.png"
           alt="A mobile phone, tablet and laptop with and app and tests labels on screen"
         />
@@ -170,7 +170,7 @@ export default function Home() {
               You can use both in your suite.
             </>
           }
-          sub="Vest can be extended to support the syntax of many other frameworks (Jest, Ava, etc.). Vest's core is syntax-agnostic as it uses a generic tree of steps."
+          sub="Vest can be extended to support Jest, Ava, and the likes."
           img="images/poly-syntax.svg"
           alt="A word cloud with test related keywords"
           rtl
@@ -210,7 +210,7 @@ export default function Home() {
         />
         <Section
           title="CI"
-          body="Tests run on CI by spinning a browser."
+          body="Tests run on CI by spinning a headless browser, or using Browsertsack el al."
           sub="Surely you do that already."
           img="images/cl.svg"
           alt="Command line logo"
