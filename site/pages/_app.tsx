@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import GoogleAnalytics from '@vest/site/GoogleAnalytics';
 import theme from '@vest/site/theme';
 import AppFrame from '@vest/site/AppFrame';
 
@@ -32,6 +33,7 @@ export default function MyApp(props: AppProps) {
         <AppFrame>
           <Component {...pageProps} />
         </AppFrame>
+        <GoogleAnalytics />
       </ThemeProvider>
     </>
   );

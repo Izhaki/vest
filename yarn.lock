@@ -1206,6 +1206,11 @@
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
+"@types/google.analytics@^0.0.40":
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/@types/google.analytics/-/google.analytics-0.0.40.tgz#35526e9d78333423c430ade1c821ce54d0f0f850"
+  integrity sha512-R3HpnLkqmKxhUAf8kIVvDVGJqPtaaZlW4yowNwjOZUTmYUQEgHh8Nh5wkSXKMroNAuQM8gbXJHmNbbgA8tdb7Q==
+
 "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.4":
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.5.tgz#dcce4430e64b443ba8945f0290fb564ad5bac6dd"

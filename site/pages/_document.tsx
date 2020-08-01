@@ -17,6 +17,15 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+                window.ga('create','UA-46595622-9','auto');
+              `,
+            }}
+          />
           <NextScript />
         </body>
       </Html>

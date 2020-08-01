@@ -16,6 +16,7 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
+    "@types/google.analytics": "^0.0.40",
     "cross-env": "^7.0.2",
     "next-transpile-modules": "^3.3.0",
     "resolve-ts-aliases": "^1.0.1",
