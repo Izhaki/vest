@@ -5,10 +5,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import HomeTests from './HomeTests';
 
 const useStyles = makeStyles({
   banner: {
-    backgroundColor: 'black',
+    backgroundColor: '#24292E',
     display: 'flex',
     flexDirection: 'column',
     padding: 40,
@@ -51,7 +52,7 @@ const useStyles = makeStyles({
     boxShadow: `rgba(0, 0, 0, 0.55) 0px 9px 12px`,
   },
   title: {
-    color: `rgba(0, 0, 0, 0.87)`,
+    color: `#24292E`,
     fontWeight: 600,
   },
   body: {
@@ -224,6 +225,7 @@ export default function Home() {
           alt="A diagram showing the component of Vest"
         />
       </main>
+      <HomeTests />
     </div>
   );
 }

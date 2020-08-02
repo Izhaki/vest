@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-export default function Stats({ stats }) {
+export default function Stats({ stats, onToggle = () => {} }) {
   const classes = useStyles();
   const { running, startTime, endTime, counters } = stats;
   const { modules, specs } = counters;
@@ -42,7 +42,7 @@ export default function Stats({ stats }) {
   const duration = useTimer(startTime, endTime);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onClick={onToggle}>
       <div className={classes.bar}>
         <span className={classes.brand}>VEST</span>
         <Duration ms={duration} showCentisecond={!running} />

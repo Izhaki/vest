@@ -9,7 +9,7 @@ import GithubIcon from './GithubIcon';
 const useStyles = makeStyles({
   appBar: {
     backgroundColor: 'white',
-    color: '#333',
+    color: '#24292E',
   },
   title: {
     flexGrow: 1,

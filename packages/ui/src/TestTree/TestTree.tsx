@@ -9,12 +9,13 @@ const useStyles = makeStyles((theme) =>
     root: {
       width: '100%',
       // maxWidth: 360,
-      backgroundColor: 'black',
+      backgroundColor: 'rgba(0,0,0,0.95)',
       // fontFamily:
       //   '-apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;',
       fontSize: 12,
       // color: '#2F96BA',
       color: '#30D6D6',
+      flex: 1,
     },
     nested: {
       paddingLeft: theme.spacing(4),

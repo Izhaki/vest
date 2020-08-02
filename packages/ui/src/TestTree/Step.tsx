@@ -67,7 +67,7 @@ export default function Step({
   step,
   depth = 0,
   onRun,
-  onToggle,
+  onToggle = () => {},
   CollapseTigger = null,
 }) {
   const classes = useStyles();
