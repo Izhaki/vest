@@ -1,18 +1,17 @@
 import * as React from 'react';
 
+const useEnhancedEffect =
+  typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+
 export default (WrappedComponent) => {
   const withNoSSR = (props) => {
     const [shouldRender, setShouldRender] = React.useState(false);
 
-    React.useEffect(() => {
+    useEnhancedEffect(() => {
       setShouldRender(true);
     }, []);
 
-    if (!shouldRender) {
-      return null;
-    }
-
-    return <WrappedComponent {...props} />;
+    return shouldRender ? <WrappedComponent {...props} /> : null;
   };
 
   return withNoSSR;

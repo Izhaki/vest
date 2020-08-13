@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) =>
       backgroundColor: 'rgba(0, 0, 0, 0.9)',
     },
     bar: {
-      // backgroundColor: 'rgba(0, 102, 148, 0.4)',
+      height: 32,
       backgroundColor: '#24292E', // - Github black
       color: '#2F96BA',
       padding: '6px 1rem',

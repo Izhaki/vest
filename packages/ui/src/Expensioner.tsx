@@ -1,8 +1,8 @@
 import * as React from 'react';
 import clsx from 'clsx';
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
-import MuiDrawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import Drawer from '@material-ui/core/Drawer';
 
 const drawerHeight = {
   open: '100%',
@@ -11,7 +11,6 @@ const drawerHeight = {
 
 const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {},
     drawer: {
       height: drawerHeight.open,
       flexShrink: 0,
@@ -37,25 +36,10 @@ const useStyles = makeStyles((theme) =>
       zIndex: 1400,
       backgroundColor: 'transparent',
     },
-    header: {
-      backgroundColor: 'black',
-      height: drawerHeight.closed,
-      color: 'white',
-      padding: 4,
-      display: 'flex',
-      justifyContent: 'space-between',
-    },
-    info: {
-      display: 'flex',
-      alignItems: 'center',
-    },
     main: {
       flex: 1,
       display: 'flex',
       flexDirection: 'column',
-    },
-    testcount: {
-      marginRight: theme.spacing(1),
     },
   })
 );
@@ -64,15 +48,10 @@ export default function Expensioner({ open = true, children }) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <MuiDrawer
+    <ScopedCssBaseline>
+      <Drawer
         variant="permanent"
         anchor="bottom"
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
-        })}
         classes={{
           paper: clsx(classes.drawerPaper, {
             [classes.drawerOpen]: open,
@@ -80,7 +59,7 @@ export default function Expensioner({ open = true, children }) {
           }),
         }}>
         <div className={classes.main}>{children}</div>
-      </MuiDrawer>
-    </div>
+      </Drawer>
+    </ScopedCssBaseline>
   );
 }

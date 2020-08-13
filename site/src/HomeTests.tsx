@@ -9,11 +9,11 @@ export default function HomeTests() {
   };
 
   return (
-    <Suite suite={suite}>
-      <Expensioner open={open}>
+    <Expensioner open={open}>
+      <Suite suite={suite}>
         <Stats onToggle={handleToggleDrawer} />
         <TestTree />
-      </Expensioner>
-    </Suite>
+      </Suite>
+    </Expensioner>
   );
 }

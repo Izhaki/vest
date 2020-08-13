@@ -1,11 +1,16 @@
 import * as React from 'react';
 import clsx from 'clsx';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import HomeTests from './HomeTests';
+import { Trigger, LoadingIndicator } from '@vest/ui';
+
+const HomeTests = dynamic(() => import('./HomeTests'), {
+  loading: LoadingIndicator,
+});
 
 const useStyles = makeStyles({
   banner: {
@@ -225,7 +230,9 @@ export default function Home() {
           alt="A diagram showing the component of Vest"
         />
       </main>
-      <HomeTests />
+      <Trigger>
+        <HomeTests />
+      </Trigger>
     </div>
   );
 }
