@@ -7,6 +7,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { Trigger, LoadingIndicator } from '@vest/ui';
+import InAction from './InAction';
 
 const HomeTests = dynamic(() => import('./HomeTests'), {
   loading: LoadingIndicator,
@@ -121,6 +122,7 @@ function Section({
 
 export default function Home() {
   const classes = useStyles();
+  const [testsLoaded, setTestsLoaded] = React.useState(false);
   return (
     <div>
       <Head>
@@ -230,9 +232,10 @@ export default function Home() {
           alt="A diagram showing the component of Vest"
         />
       </main>
-      <Trigger>
+      <Trigger onClick={() => setTestsLoaded(true)}>
         <HomeTests />
       </Trigger>
+      {!testsLoaded && <InAction />}
     </div>
   );
 }
